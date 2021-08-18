@@ -122,6 +122,12 @@ public class BasicController {
 		model.addAttribute("users", list);
 	}
 
+	@GetMapping("/javascript")
+	public String javascript(Model model) {
+		model.addAttribute("user",new User("user\"A\"",10));
+		addUsers(model);
+		return "basic/javascript";
+	}
 
 	@Component("helloBean")
 	static class HelloBean {
