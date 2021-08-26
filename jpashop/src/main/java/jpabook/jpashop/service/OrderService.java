@@ -49,12 +49,12 @@ public class OrderService {
     {
         //주문 엔티티 조회
         Order order = orderRepository.findOne(orderId);
-        
+
         //주문 취소
         order.cancel();
-        
+
     }
 
     //검색
-    public List<Order> findOrders(OrderSearch)
+    /*public List<Order> findOrders(OrderSearch)*/
 }
