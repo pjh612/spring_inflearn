@@ -24,6 +24,7 @@ public class ItemRepository {
     }
 
     public Item findOne(Long id) {
+        em.find(Item.class, id);
         return em.find(Item.class, id);
     }
 
