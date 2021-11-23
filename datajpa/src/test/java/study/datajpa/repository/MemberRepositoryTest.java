@@ -36,8 +36,7 @@ public class MemberRepositoryTest {
                 memberRepository.findById(savedMember.getId()).get();
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
 
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername())
-        ;
+        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
         Assertions.assertThat(findMember).isEqualTo(member); //JPA 엔티티 동일성보장
     }
     @Test
@@ -159,5 +158,11 @@ public class MemberRepositoryTest {
         List<Member> result = memberRepository.findLockByUsername("member1");
 
         em.flush();
+    }
+
+    @Test
+    public void callCustom()
+    {
+        List<Member> memberCustom = memberRepository.findMemberCustom();
     }
 }
